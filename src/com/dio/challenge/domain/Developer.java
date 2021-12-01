@@ -12,7 +12,7 @@ public class Developer {
     private Set<Contents> doneContents = new LinkedHashSet<>();
 
     public void subscribeBootcamp(Bootcamp bootcamp){
-        this.doneContents.addAll(bootcamp.getContents());
+        this.subscribedContents.addAll(bootcamp.getContents());
         bootcamp.getSubscribedDevelopers().add(this);
     }
 
@@ -68,5 +68,14 @@ public class Developer {
 
     public void setDoneContents(Set<Contents> doneContents) {
         this.doneContents = doneContents;
+    }
+
+    @Override
+    public String toString() {
+        return "Developer{" +
+                "name='" + name + '\'' +
+                ", subscribedContents=" + subscribedContents +
+                ", doneContents=" + doneContents +
+                '}';
     }
 }

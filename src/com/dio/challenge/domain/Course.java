@@ -21,10 +21,8 @@ public class Course extends Contents {
 
     @Override
     public String toString() {
-        return "Curse{" +
-                "title='" + getTitle() + '\'' +
-                ", description='" + getDescription() + '\'' +
-                ", workload=" + workload +
-                '}';
+        return "\nCurse: " + getTitle() + '\n' +
+                "Description: " + getDescription() + '\n' +
+                "Workload: " + workload + " hours\n";
     }
 }

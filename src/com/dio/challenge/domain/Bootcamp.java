@@ -15,6 +15,18 @@ public class Bootcamp {
     private Set<Contents> contents = new LinkedHashSet<>();
 
     @Override
+    public String toString() {
+        return "Bootcamp{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", initialDate=" + initialDate +
+                ", finalDate=" + finalDate +
+                ", subscribedDevelopers=" + subscribedDevelopers +
+                ", contents=" + contents +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

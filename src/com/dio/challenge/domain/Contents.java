@@ -9,6 +9,15 @@ public abstract class Contents {
     public Contents() {
     }
 
+    @Override
+    public String toString() {
+        return "Contents{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", XP_PADRAO=" + XP_PADRAO +
+                '}';
+    }
+
     public abstract double calcXP();
 
     public String getTitle() {

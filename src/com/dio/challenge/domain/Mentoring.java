@@ -23,10 +23,8 @@ public class Mentoring extends Contents {
 
     @Override
     public String toString() {
-        return "Mentoring{" +
-                "title='" + getTitle() + '\'' +
-                ", description='" + getDescription() + '\'' +
-                ", date=" + date +
-                '}';
+        return "\nMentoring: " + getTitle() + '\n' +
+                "Description: " + getDescription() + '\n' +
+                "Date: " + date + "\n";
     }
 }
