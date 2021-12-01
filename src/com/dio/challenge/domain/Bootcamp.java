@@ -12,19 +12,19 @@ public class Bootcamp {
     private final LocalDate initialDate = LocalDate.now();
     private final LocalDate finalDate = initialDate.plusDays(45);
     private Set<Developer> subscribedDevelopers = new HashSet<>();
-    private Set<Contents> subscribedContents = new LinkedHashSet<>();
+    private Set<Contents> contents = new LinkedHashSet<>();
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bootcamp bootcamp = (Bootcamp) o;
-        return Objects.equals(name, bootcamp.name) && Objects.equals(description, bootcamp.description) && Objects.equals(initialDate, bootcamp.initialDate) && Objects.equals(finalDate, bootcamp.finalDate) && Objects.equals(subscribedDevelopers, bootcamp.subscribedDevelopers) && Objects.equals(subscribedContents, bootcamp.subscribedContents);
+        return Objects.equals(name, bootcamp.name) && Objects.equals(description, bootcamp.description) && Objects.equals(initialDate, bootcamp.initialDate) && Objects.equals(finalDate, bootcamp.finalDate) && Objects.equals(subscribedDevelopers, bootcamp.subscribedDevelopers) && Objects.equals(contents, bootcamp.contents);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, initialDate, finalDate, subscribedDevelopers, subscribedContents);
+        return Objects.hash(name, description, initialDate, finalDate, subscribedDevelopers, contents);
     }
 
     public String getName() {
@@ -59,11 +59,11 @@ public class Bootcamp {
         this.subscribedDevelopers = subscribedDevelopers;
     }
 
-    public Set<Contents> getSubscribedContents() {
-        return subscribedContents;
+    public Set<Contents> getContents() {
+        return contents;
     }
 
-    public void setSubscribedContents(Set<Contents> subscribedContents) {
-        this.subscribedContents = subscribedContents;
+    public void setContents(Set<Contents> contents) {
+        this.contents = contents;
     }
 }

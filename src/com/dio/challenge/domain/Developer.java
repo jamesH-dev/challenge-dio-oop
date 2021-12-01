@@ -2,6 +2,7 @@ package com.dio.challenge.domain;
 
 import java.util.LinkedHashSet;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 public class Developer {
@@ -10,11 +11,27 @@ public class Developer {
     private Set<Contents> subscribedContents = new LinkedHashSet<>();
     private Set<Contents> doneContents = new LinkedHashSet<>();
 
-    public void subscribeBootcamp(){}
+    public void subscribeBootcamp(Bootcamp bootcamp){
+        this.doneContents.addAll(bootcamp.getContents());
+        bootcamp.getSubscribedDevelopers().add(this);
+    }
 
-    public void toProgress(){}
+    public void toProgress(){
+        Optional<Contents> contents = this.subscribedContents.stream().findFirst();
+        if (contents.isPresent()){
+            this.doneContents.add(contents.get());
+            this.subscribedContents.remove(contents.get());
+        } else {
+            System.err.println("Você não está matriculado em nenhum conteúdo!");
+        }
+    }
 
-    public void calcTotalXP(){}
+    public double calcTotalXP(){
+        return this.doneContents
+                .stream()
+                .mapToDouble(Contents::calcXP)
+                .sum();
+    }
 
     @Override
     public boolean equals(Object o) {
